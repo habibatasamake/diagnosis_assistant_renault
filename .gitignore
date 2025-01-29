@@ -1,0 +1,43 @@
+# Dossiers et fichiers Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Environnements virtuels
+venv/
+.env/
+.venv/
+env/
+
+# Fichiers de configuration système
+.DS_Store
+Thumbs.db
+
+# Dépendances installées
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Fichiers sensibles
+*.json
+secrets.json
+config.yaml
+.env
+
+# Cache et fichiers temporaires
+*.tmp
+*.bak
+*.swp
+*.swo
+*.swn
+
+# Dossiers et fichiers liés à Jupyter
+.ipynb_checkpoints/
+
+# Exclusion des PDF traités (si besoin)
+*.pdf
+
+# Dossiers de logs et outputs intermédiaires
+logs/
+output/
