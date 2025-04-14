@@ -1,92 +1,59 @@
-# script_extracteur_scr_mistral_local.py
-
+import os
 import pandas as pd
 from PyPDF2 import PdfReader
+from json_repair import repair_json
 import json
 from tqdm import tqdm
-from concurrent.futures import ThreadPoolExecutor
-from json_repair import repair_json
+from llama_cpp import Llama
 
-import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-class ExtracteurSCRMistralLocal:
-    def __init__(self, url, model_id="mistralai/Mistral-7B-Instruct-v0.2", load_in_4bit=True):
-        """
-        Initialise l'extracteur :
-         - url : chemin complet vers le PDF (ex : "/content/drive/MyDrive/chemin/vers/doc.pdf")
-         - model_id : identifiant du modèle sur Hugging Face.
-         - load_in_4bit : booléen pour charger le modèle en 4 bits.
-        """
+class Extracteur_SCR_Mistral:
+    def __init__(self, url, model_path="~/llama_models/mistral/mistral-7b-instruct-v0.2.Q4_K_M.gguf", n_ctx=4096):
         self.url = url
         self.pdf_reader = PdfReader(self.url)
-        # Charger tokenizer et modèle en 4 bits
-        self.tokenizer = AutoTokenizer.from_pretrained(model_id)
-        self.model = AutoModelForCausalLM.from_pretrained(
-            model_id,
-            device_map="auto",
-            load_in_4bit=load_in_4bit,
-            torch_dtype=torch.float16,
-            trust_remote_code=True
-        )
-        # Créer le pipeline de génération
-        self.pipe = pipeline(
-            "text-generation",
-            model=self.model,
-            tokenizer=self.tokenizer,
-            torch_dtype=torch.float16,
-            device_map="auto",
-            max_new_tokens=1024,
-            do_sample=False  # réponses déterministes
-        )
         self.df_scr = pd.DataFrame()
 
+        self.model_path = os.path.expanduser(model_path)
+        self.llm = Llama(
+            model_path=self.model_path,
+            n_ctx=n_ctx,
+            n_gpu_layers=-1,
+            use_mlock=True,
+            verbose=False
+        )
+
+    def query_llm(self, prompt, max_tokens=1024):
+        response = self.llm(
+            f"[INST] {prompt.strip()} [/INST]",
+            max_tokens=max_tokens,
+            stop=["</s>"]
+        )
+        return response["choices"][0]["text"].strip()
+
     def extract_equipment(self):
-        """
-        Extrait le nom de l'équipement depuis la première page du document.
-        """
         first_page_text = self.pdf_reader.pages[0].extract_text()
         prompt = f"""
 {first_page_text}
 
 What is the equipment this document is dealing with? Return only the response.
 """
-        response = self.pipe(prompt, max_new_tokens=100, temperature=0.1)[0]["generated_text"]
-        return response.strip()
+        return self.query_llm(prompt, max_tokens=100)
 
     def alimentation_df(self, data_json, page_num, equipment):
-        """
-        Transforme la sortie JSON en DataFrame.
-        Gère le cas où chaque item est soit un dict, soit une liste.
-        """
         rows = []
         for defect in data_json:
-            if isinstance(defect, dict):
-                symptom = defect.get("symptom", "Unknown")
-                cause = defect.get("cause", "Unknown")
-                remedy = defect.get("remedy", "Unknown")
-            elif isinstance(defect, list):
-                symptom = defect[0] if len(defect) > 0 else "Unknown"
-                cause = defect[1] if len(defect) > 1 else "Unknown"
-                remedy = defect[2] if len(defect) > 2 else "Unknown"
-            else:
-                symptom, cause, remedy = "Unknown", "Unknown", "Unknown"
-
             row = {
                 "URL": self.url.rsplit("/", 1)[-1],
                 "equipment": equipment,
                 "page": page_num,
-                "symptom": symptom,
-                "cause": cause,
-                "remedy": remedy,
+                "symptom": defect.get("symptom", "Unknown"),
+                "cause": defect.get("cause", "Unknown"),
+                "remedy": defect.get("remedy", "Unknown"),
             }
             rows.append(row)
         return pd.DataFrame(rows)
 
     def process_page(self, page_num, equipment):
-        """
-        Traite une page du PDF pour extraire les défauts (SCR) via le prompt.
-        """
         page_text = self.pdf_reader.pages[page_num - 1].extract_text()
         if not page_text.strip():
             return pd.DataFrame([], columns=["URL", "equipment", "page", "symptom", "cause", "remedy"])
@@ -106,38 +73,64 @@ If a defect lacks one or more of these components (symptom, cause, or remedy), i
 
 Example JSON format:
 [
-    {{
+    {
         "symptom": "PNT1-166 Linear Potentiometer Unstable",
         "cause": "During Auto Calibration, the feedback from the linear potentiometer revealed large fluctuations.",
         "remedy": "Change the applicator and repair the malfunctioning linear potentiometer."
-    }}
+    }
 ]
 """
-        response = self.pipe(prompt, max_new_tokens=2000, temperature=0.1)[0]["generated_text"]
+        response = self.query_llm(prompt, max_tokens=2000)
         repaired_json = repair_json(response)
         try:
             data_json = json.loads(repaired_json)
         except json.JSONDecodeError:
-            # Si la réparation ne suffit pas, on retourne une liste vide
             data_json = []
         return self.alimentation_df(data_json, page_num, equipment)
 
     def extract_defects(self, start_page=0, end_page=0):
-        """
-        Extrait les défauts SCR du document entre start_page et end_page.
-        """
         if end_page == 0:
             end_page = len(self.pdf_reader.pages)
         equipment = self.extract_equipment()
-        with ThreadPoolExecutor() as executor:
-            results = list(tqdm(
-                executor.map(lambda page: self.process_page(page, equipment), range(start_page, end_page + 1)),
-                total=end_page - start_page + 1,
-                desc="Extraction SCR",
-                leave=False
-            ))
+        results = []
+        for page in tqdm(range(start_page, end_page + 1), desc="Extraction SCR"):
+            df_page = self.process_page(page, equipment)
+            results.append(df_page)
         self.df_scr = pd.concat(results, ignore_index=True)
         self.df_scr = self.df_scr[["URL", "equipment", "page", "symptom", "cause", "remedy"]]
         self.df_scr.sort_values(by="page", ascending=True, inplace=True)
         return self.df_scr
 
+    def classify_document_par_chunks(self, start_page=0, end_page=0, chunk_size_chars=3000):
+        if end_page == 0:
+            end_page = len(self.pdf_reader.pages)
+
+        texts = []
+        for i in range(start_page, end_page):
+            text = self.pdf_reader.pages[i].extract_text()
+            if text and text.strip():
+                texts.append(text)
+        full_text = "\n\n".join(texts)
+
+        chunks = [full_text[i:i + chunk_size_chars] for i in range(0, len(full_text), chunk_size_chars)]
+
+        results = []
+        for idx, chunk in enumerate(tqdm(chunks, desc="Classification SCR chunks"), 1):
+            prompt = f"""
+Here is an excerpt from a technical document:
+
+{chunk}
+
+Based on the text above, determine whether this excerpt is structured in a way that facilitates the extraction of defects and their associated causes and remedies using a simple regex extraction. In particular, check if the excerpt clearly delineates sections or markers corresponding to:
+* symptom: a description of the defect (including any error codes),
+* cause: a possible explanation for the defect,
+* remedy: the suggested solution or troubleshooting steps.
+
+Answer only \"Yes\" or \"No\".
+"""
+            response = self.query_llm(prompt, max_tokens=10).lower()
+            results.append("yes" in response)
+
+        yes_count = sum(results)
+        total_chunks = len(results)
+        return f"{yes_count}/{total_chunks} chunks structured SCR"
