@@ -1,4 +1,9 @@
 import re
+import os
+import json
+import pdfplumber
+import pandas as pd
+from tqdm import tqdm
 
 SYNONYMS = {
     "cause": ["Cause", "Explanation", "Explication"],
@@ -94,7 +99,7 @@ def convert_pdf_to_json_with_progress(pdf_path):
     Returns:
         dict: A JSON-like dictionary with the file name and text content.
     """
-    json_object = {"FileName": "Doc fournisseur", "Text": []}
+    json_object = {"FileName": pdf_path, "Text": []}
 
     try:
         with pdfplumber.open(pdf_path) as pdf:
@@ -114,7 +119,7 @@ def convert_pdf_to_json_with_progress(pdf_path):
 
 
 class ExtracteurSCR:
-    def __init__(self, path, meta):
+    def __init__(self, path, meta=None):
         self.SYNONYMS = {
             "cause": ["Cause", "Explanation", "Explication"],
             "remedy": ["Remedy", "Action", "Mesure"]
@@ -126,15 +131,89 @@ class ExtracteurSCR:
 
     def parser_doc(self):
       self.parsed_doc = convert_pdf_to_json_with_progress(self.path)
-    
+
     def extract_triplets_from_text(self):
       liste_triplets_scr = []
-      for page in self.parsed_doc['Text']:
+      for i, page in enumerate(self.parsed_doc['Text']):
+        tmp = {}
         triplets = extract_triplets_from_text(page['Raw Content'])
-        liste_triplets_scr.extend(triplets)
-      return liste_triplets_scr  
+        tmp['FileName'] = self.parsed_doc['FileName']
+        tmp['PageNumber'] = page['PageNumber']
+        tmp['Triplets'] = triplets
+        liste_triplets_scr.append(tmp)
+      self.liste_triplets_scr = liste_triplets_scr
+      return liste_triplets_scr
 
 
-extracteur = ExtracteurSCR(path_to_doc_fournisseur, doc_fournisseur)
+    def export_triplets(self, output_path, format="csv"):
+        if not self.liste_triplets_scr:
+            print("Aucune donnée à exporter. Appelle extract_triplets_from_text() d'abord.")
+            return
+
+        # Aplatir tous les triplets de toutes les pages
+        flat_data = []
+        for page_data in self.liste_triplets_scr:
+            for triplet in page_data['Triplets']:
+                flat_data.append({
+                    "FileName": page_data['FileName'],
+                    "PageNumber": page_data['PageNumber'],
+                    #"Code Erreur": triplet.get("symptom", ""),
+                    "Symptom": triplet.get("symptom", ""),
+                    "Cause": triplet.get("cause", ""),
+                    "Remedy": triplet.get("remedy", "")
+                })
+
+        # Export CSV
+        if format.lower() == "csv":
+            df = pd.DataFrame(flat_data)
+            df.to_csv(output_path, index=False, encoding='utf-8')
+            print(f"Exporté au format CSV : {output_path}")
+
+        # Export JSON
+        elif format.lower() == "json":
+            with open(output_path, "w", encoding='utf-8') as f:
+                json.dump(flat_data, f, ensure_ascii=False, indent=2)
+            print(f"Exporté au format JSON : {output_path}")
+
+        else:
+            print("Format non supporté. Choisis 'csv' ou 'json'.")
+
+
+
+def process_folder_v2(folder_path, output_dir="export_triplets", max_files=None, export_format="csv"):
+    os.makedirs(output_dir, exist_ok=True)
+    csv_paths = []
+    file_count = 0
+
+    for filename in tqdm(os.listdir(folder_path), desc="Traitement des PDF"):
+        if filename.endswith(".pdf"):
+            file_count += 1
+            if max_files and file_count > max_files:
+                break
+
+            filepath = os.path.join(folder_path, filename)
+            try:
+                extracteur = ExtracteurSCR(filepath)
+                extracteur.parser_doc()
+                liste_triplets_scr = extracteur.extract_triplets_from_text()
+
+                base_name = os.path.splitext(filename)[0]
+                output_path = os.path.join(output_dir, f"triplets_{base_name}.{export_format}")
+                extracteur.export_triplets(output_path, format=export_format)
+                csv_paths.append(output_path)
+
+            except Exception as e:
+                print(f"Erreur lors du traitement de {filename} : {e}")
+
+    return csv_paths
+
+    
+extracteur = ExtracteurSCR(path_to_doc_fournisseur)
 extracteur.parser_doc()
 triplet = extracteur.extract_triplets_from_text()
+folder_path = "/content/drive/MyDrive/pdf_file/data_pdf/simple" # Remplacer par le chemin réel de votre dossier
+
+extracteur.export_triplets(output_path= folder_path + "/triplets.csv", format="csv")
+path_to_dataframe = pd.read_csv(folder_path + "/triplets.csv")
+df = pd.DataFrame(path_to_dataframe)
+nb = len(df)
