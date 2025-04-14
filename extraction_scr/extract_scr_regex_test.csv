@@ -1,0 +1,381 @@
+URL,equipment,page,symptom,cause,remedy
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,40,"ERROR RECOVERY MARRBERCD04121E REV N
+Note For the following steps, press and hold down the SHIFT key until you have
+completed Step 7b through Step 7d .
+b. PressandcontinuepressingSHIFTandpressF2,RESET.Waitforservopower.
+c. ContinuouslypressandholdtheDEADMANswitchandturntheteachpendantON/OFF
+switch to ON.
+d. Jog the overtraveled axis off the overtravel switch. When you have finished jogging,
+you can release the SHIFT key .
+Note IfyouaccidentallyreleasetheshiftkeyduringStep7bthroughStep7d,youwill
+have to repeat them.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,40,"Iftherobotisnotcalibrated, performthefollowingsteps:
+Note Forthefollowingsteps,pressandholddowntheSHIFTkeyuntilyouhavecompleted
+Step 8a through Step 8d .
+a. PressandcontinuepressingSHIFTandpressF2,RESET.Waitforservopower.
+b. PressCOORDuntilyouselecttheJOINTcoordinatesystem.
+c. ContinuouslypressandholdtheDEADMANswitchandturntheteachpendantON/OFF
+switch to ON.
+d. Jog the overtraveled axis off the overtravel switch. When you have finished jogging,
+you can release the SHIFT key .
+Note Ifyouaccidentallyreleasetheshiftkeyduringthisstep,youwillneedtorepeatit.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,40,TurntheteachpendantON/OFFswitchtoOFFandreleasetheDEADMANswitch.,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,40,"Check CRM68 & CRF7 connection on the amplifier PCB if the robot is not in an actual
+overtravel condition.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,40,"Hand Breakage Recovery
+Ahandbreakageerroroccurswhenthehandbreakagedetectionswitchistrippedonrobotsequipped
+withhandbreakagehardware. Theswitchistrippedwhentherobottoolstrikesanobstacle,which
+could possibly cause the tool to break. The system
+• Shutsoffdrivepowertotheservosystemandappliesrobotbrakes
+• Displaysanerrormessageindicatingthatthehandisbroken
+• Lights the operator panel FAULT light
+2–4",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,"MARRBERCD04121E REV N 2. ERROR RECOVERY
+• Lights the teach pendant FAULT LED
+ThestatusofthehandbreakagedetectionswitchisdisplayedontheSTATUSSafetySignalsscreen.
+Use Procedure 2-2 to recover from a hand breakage.
+Procedure 2-2 Recovering from a Hand Breakage
+Conditions
+• The hand breakage error message is displayed.
+Steps",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,Press MENU.,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,Select SYSTEM.,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,"Press F1, [TYPE].",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,Select Master/Cal.,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,"Requestatrainedservicepersontoinspectand,ifnecessary,repairthetool.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,"Determinewhatcausedthetooltostrikeanobject,causingthehandtobreak.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,"Ifthehandbreakageoccurredwhileaprogramwasbeingexecuted,youmightneedtoreteach
+positions,modifytheprogram,ormovetheobjectthatwasstruck.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,"Testruntheprogramifithasbeenmodified,ifnewpositionshavebeenrecorded,orifobjects
+in the work envelope have been moved.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,41,"Pulse Coder Alarm Recovery
+Ifthepulsecountsatpowerupdonotmatchthepulsecountsatpowerdown,apulsemismatcherror
+occursforeachmotiongroupandeachaxis. UseProcedure2-3toresetapulsecoderalarm.
+Procedure 2-3 Resetting a Pulse Coder SRVO-062 Alarm
+Steps
+2–5",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,42,ZERO POSITION MASTER,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,42,FIXTURE POSITION MASTER,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,42,QUICK MASTER,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,42,SINGLE AXIS MASTER,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,42,SET QUICK MASTER REF,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,42,"PressF4, YES.Youwillseeascreensimilartothefollowing.
+2–6",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,"MARRBERCD04121E REV N 2. ERROR RECOVERY
+SYSTEM Master/Cal",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,Correct the cause of the alarm.,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,Press MENU.,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,QUICK MASTER,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,SINGLE AXIS MASTER,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,SET QUICK MASTER REF,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,"CALIBRATE
+Pulse coder alarm reset!",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,43,"Chain Failure Detection Error Recovery
+A Single Chain Failure Detection fault will be set if one safety chain is in an Emergency Stop
+condition, andtheotherisnotinanEmergencyStopcondition.
+WhenaSingleChainFailureDetectionfaultoccurs,thesystemdoesthefollowing:
+• Shutsoffdrivepowertotheservosystemandappliesrobotbrakes
+• Displaysanerrormessageindicatingthatasinglechainfailurehasoccurred.
+• Lights the operator panel FAULT light
+• Lights the teach pendant FAULT LED
+Chain Failure Detection Errors
+RefertotheMaintenanceManualformoreinformationonchainfailuredetectionerrors,SRVO-230
+and231,SRVO-266through275(externalchecking-customer),andSRVO-370through385(internal
+checking)
+Procedure 2-4 Chain Failure Detection Error Recovery
+Conditions
+• The system detected either a SRVO-230 Chain 1 (+24V abnormal) or a SRVO-231 Chain 2
+(0V abnormal) error.
+• Youcannotresetthechainfailureerrors,evenafterturningthecontrollerOFFandthenONagain.
+Steps
+2–7",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,44,ERROR RECOVERY MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,44,"SelectALARMS.Youwillseeascreensimilartothefollowing.
+ALARM: Active
+SRVO-230 Chain 1(+24V) abnormal",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,44,"PressF4,RES_CH1. Youwillseeascreensimilartothefollowing
+ALARM: Active
+SRVO-230 Chain 1(+24V) abnormal
+Reset Single Channel Fault [NO]",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,44,"Press F4, YES to reset the fault.",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,44,"PresstheRESETbuttonontheteachpendantoroperatorpanel.
+Warning
+If you reset the chain failure fault without fixing the cause of it, the
+same alarm will occur, but the robot can move until the alarm occurs
+again. Besuretofixthecauseofthechainfailurebeforeyoucontinue.
+Otherwise, you could injure personnel or damage equipment.
+2–8",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,"Chapter 3
+ERROR CODES
+Contents
+Chapter3 ERRORCODES ....................................................................................... 3–1",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,A................................................................................................................. 3–4,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,ACALAlarmCode ..................................................................................... 3–4,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,APSHAlarmCode .................................................................................... 3–28,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,ARCAlarmCode ...................................................................................... 3–60,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,ASBNAlarmCode .................................................................................... 3–94,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,ATEXAlarmCode .................................................................................. 3–120,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,ATGPAlarmCode .................................................................................. 3–126,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,ATZNAlarmCode.................................................................................... 3–127,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,B.............................................................................................................. 3–133,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,BBOXAlarmCode................................................................................... 3–133,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,BRCHAlarmCode................................................................................... 3–138,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,C.............................................................................................................. 3–141,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,CALMAlarmCode ................................................................................. 3–141,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,CDAlarmCode ...................................................................................... 3–148,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,CMNDAlarmCode ................................................................................. 3–154,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,CNTRAlarmCode .................................................................................. 3–158,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,CONDAlarmCode ................................................................................. 3–163,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,COPTAlarmCode .................................................................................. 3–164,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,CPMOAlarmCode ................................................................................. 3–169,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,CVISAlarmCode ................................................................................... 3–210,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,D.............................................................................................................. 3–331,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,DIAGAlarmCode..................................................................................... 3–331,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,DICTAlarmCode ................................................................................... 3–333,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,DJOGAlarmCode.................................................................................. 3–341,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,DMDRAlarmCode ................................................................................. 3–344,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,DMERAlarmCode ................................................................................. 3–346,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,DNETAlarmCode .................................................................................. 3–357,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,DTBRAlarmCode.................................................................................... 3–381,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,45,"DXAlarmCode ...................................................................................... 3–382
+3–1",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,E.............................................................................................................. 3–385,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,ELOGAlarmCode.................................................................................. 3–385,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,F.............................................................................................................. 3–386,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,FILEAlarmCode ..................................................................................... 3–386,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,FLPYAlarmCode .................................................................................. 3–404,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,FORCAlarmCode .................................................................................. 3–406,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,FRSYAlarmCode .................................................................................. 3–449,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,FXTLAlarmCode ................................................................................... 3–454,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,H.............................................................................................................. 3–476,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,HOSTAlarmCode .................................................................................. 3–476,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,HRTLAlarmCode .................................................................................. 3–510,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,I................................................................................................................ 3–523,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,IBSSAlarmCode ................................................................................... 3–523,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,ICRZAlarmCode ................................................................................... 3–575,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,IFPNAlarmCode ................................................................................... 3–578,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,INTPAlarmCode ................................................................................... 3–584,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,IRALAlarmCode ................................................................................... 3–661,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,IRPKAlarmCode..................................................................................... 3–662,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,ISDAlarmCode ...................................................................................... 3–691,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,ISDTAlarmCode ................................................................................... 3–725,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,J............................................................................................................... 3–731,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,JOGAlarmCode .................................................................................... 3–731,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,K.............................................................................................................. 3–738,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,KALMAlarmCode................................................................................... 3–738,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,L.............................................................................................................. 3–739,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,LANGAlarmCode.................................................................................. 3–739,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,LECOAlarmCode .................................................................................. 3–745,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,LNTKAlarmCode .................................................................................. 3–755,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,LSTPAlarmCode .................................................................................. 3–768,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,M.............................................................................................................. 3–771,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MACRAlarmCode ................................................................................. 3–771,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MARLAlarmCode ................................................................................. 3–773,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MASIAlarmCode ................................................................................... 3–778,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MCTLAlarmCode .................................................................................. 3–785,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MEMOAlarmCode ................................................................................. 3–788,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MHNDAlarmCode ................................................................................. 3–805,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MOTNAlarmCode ................................................................................. 3–824,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,MUPSAlarmCode ................................................................................. 3–909,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,N.............................................................................................................. 3–911,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,NCBNAlarmCode................................................................................... 3–911,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,O.............................................................................................................. 3–914,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,OPTNAlarmCode.................................................................................... 3–914,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,OSAlarmCode ...................................................................................... 3–921,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,P.............................................................................................................. 3–923,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,PALLAlarmCode................................................................................... 3–923,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,PALTAlarmCode ................................................................................... 3–966,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,PICKAlarmCode ................................................................................... 3–969,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,PMONAlarmCode ................................................................................. 3–976,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,PNT1AlarmCode .................................................................................. 3–978,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,PNT2AlarmCode ................................................................................. 3–1152,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,PRIOAlarmCode ................................................................................. 3–1309,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,46,"PROCAlarmCode................................................................................. 3–1375
+3–2",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,MARRBERCD04121E REV N 3. ERROR CODES,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,PROFAlarmCode ................................................................................ 3–1376,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,PROGAlarmCode ............................................................................... 3–1379,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,PTPGAlarmCode.................................................................................. 3–1389,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,PWDAlarmCode ................................................................................. 3–1392,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,Q............................................................................................................ 3–1401,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,QMGRAlarmCode ............................................................................... 3–1401,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,R............................................................................................................ 3–1402,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,RIPEAlarmCode .................................................................................. 3–1402,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,ROUTAlarmCode ................................................................................ 3–1406,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,RPCAlarmCode ................................................................................... 3–1411,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,RPMAlarmCode................................................................................... 3–1414,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,RRMCAlarmCode................................................................................. 3–1416,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,RTCPAlarmCode ................................................................................. 3–1420,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,S............................................................................................................ 3–1423,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SCIOAlarmCode ................................................................................. 3–1423,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SDTLAlarmCode ................................................................................ 3–1425,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SEALAlarmCode ................................................................................ 3–1439,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SENCAlarmCode.................................................................................. 3–1499,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SENSAlarmCode ................................................................................ 3–1501,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SHAPAlarmCode ................................................................................. 3–1502,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SPOTAlarmCode ................................................................................ 3–1510,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SPRMAlarmCode ............................................................................... 3–1546,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SRIOAlarmCode ................................................................................. 3–1547,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SRVOAlarmCode ................................................................................ 3–1550,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SSPCAlarmCode ................................................................................ 3–1654,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SVGNAlarmCode................................................................................ 3–1669,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SVTLAlarmCode.................................................................................. 3–1761,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,SYSTAlarmCode ................................................................................. 3–1764,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,T............................................................................................................ 3–1818,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TASTAlarmCode................................................................................. 3–1818,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TCPPAlarmCode ................................................................................ 3–1821,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TGAlarmCode .................................................................................... 3–1826,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,THSRAlarmCode ................................................................................ 3–1830,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TJOGAlarmCode ................................................................................ 3–1840,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TMATAlarmCode ................................................................................ 3–1841,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TMSNAlarmCode................................................................................ 3–1845,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TOOLAlarmCode ................................................................................ 3–1855,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TPIFAlarmCode .................................................................................. 3–1860,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TRAKAlarmCode ................................................................................ 3–1893,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,TRSVAlarmCode.................................................................................. 3–1896,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,V............................................................................................................ 3–1903,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,VARSAlarmCode ................................................................................ 3–1903,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,W........................................................................................................... 3–1917,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,WEAVAlarmCode ............................................................................... 3–1917,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,WNDWAlarmCode .............................................................................. 3–1921,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,X .......................................................................................................... 3–1927,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,47,"XMLFAlarmCode ................................................................................ 3–1927
+3–3",Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,A,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,ACAL Alarm Code,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,ACAL-000 Fail to run DETECT Motn,TheAccuCal2Motionfailedtorun. TheAccuCal2motioncannotbestarted.,Clear all the errors before executing AccuCal2.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,ACAL-001 Robot is not ready.,Therobotisnotready. Thesystemcannotissuemotionbecauseitisinanerrorstate.,"Clear all faults, then retry the operation."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,"ACAL-002 Fail to fit circle.
+• Increase the number of iterations allowed.
+• Increase the convergence threshold setting.
+• Make sure the TCP has not been changed.",AccuCal2cannotconvergewithinthesetthreshold.,Perform the following:
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,ACAL-003 Contact before search.,Therobotisincontactwiththepartbeforestartingasearchmotion.,Reteach the starting position.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,48,"ACAL-004 No contact detected.
+3–4",NocontactwasmadeduringtheAccuCal2motion.,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,49,MARRBERCD04121E REV N 3. ERROR CODES,Unknown,Makesurethesensorandsoftwareareinstalledcorrectly.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,49,ACAL-005 Undefined program name.,The AccuCal2 program name was not defined.,SelectanAccuCal2teachpendantprogrambeforepressingtheEXECkey.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,49,"ACAL-006 TPE operation error.
+again. Ifthisdoesn'tresolvetheproblem, reinstallthecontrollersoftware. RefertotheSoftware
+InstallationManualforinformationoninstallingsoftware.",Thisisaninternalteachpendanteditorprogramerror.,"Aborttheprogramandrunagain. Ifthisdoesn'tresolvetheproblem,cyclepowerandtry"
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,49,"ACAL-007 Calibration internal error.
+controllersoftware. RefertotheSoftwareInstallationManualformoreinformation.",This is an AccuCal2 internal error.,"Turnoffthecontroller,andturnitonagaintorecover. Iftheproblempersistes,reinstallthe"
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,49,ACAL-008 File open error.,The output file cannot be opened.,"Checkthepath,andfilenametobesuretheyarecorrect."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,49,"ACAL-009 No matching Start inst.
+instruction.
+3–5",YouaretryingtoexecuteaCALIBENDinstructionwithoutamatchingCALIBSTART,AddaCALIBSTARTinstructionbeforetheCALIBEND.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,50,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,50,"ACAL-010 Invalid schedule number.
+pendant instruction.","TheschedulenumberinCALIB,UTOOL,orUFRAMESTARTisinvalid.",ProvideacorrectschedulenumberinCALIB(orUTOOLorUFRAME)START[]teach
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,50,ACAL-011 Cannot access $MNUFRAME.,Thecurrent$MNUFRAMENUM[]isincorrectandcannotbeaccessed.,GototheUSERFRAMEmenutoselectavaliduserframe.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,50,ACAL-012 Cannot access $MNUTOOL.,Cannotaccess$MNUTOOL.Thecurrent$MNUTOOLNUM[]isincorrect.,DisplaytheFRAMEmenutoselectavalidtoolframe.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,50,"ACAL-013 Backward execution ignored.
+you do not want this to happen.",Backwardexecutionwereignored. TheAccuCal2instructionscannotbeexecutedbackward.,ThebackwardexecutionoftheAccuCal2instructionsisignored. Rewritetheinstructionsif
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,50,ACAL-014 System loading error.,Systemloadingerror. TheAccuCal2isloadedincorrectly.,Reloadthecontroller. RefertotheSoftwareInstallationManualformoreinformation.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,50,"ACAL-015 Not enough data.
+3–6",Notenoughdataexiststocomputetheframeoffset.,AddmoreDetectinstructionsintheAccuCal2program.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,51,MARRBERCD04121E REV N 3. ERROR CODES,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,51,ACAL-016 No Preplan motion for Detect,TheDetectinstructiondoesnotallowpre-planmotion.,None.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,51,"ACAL-017 Wrong number of searches.
+application-specificSetupandOperationsManualforinformationonthenumberofsearchesrequired
+for each calibration type.",An incorrect number of searches was performed.,Re-teach the AccuCal2 program with an appropriate number of searches. Refer to the
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,51,ACAL-018 Nonorthogonal search vector,The3planesmethodrequiresthreesearchdirectionsbenormaltoeachother.,Re-teachthecellfinderprogramwiththreesearchdirectionsthatarenormaltoeachother.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,51,ACAL-019 Positions are too close.,Positionsaretooclose. Thetaughtpositionsaretooclosetoeachother.,Re-teachthecellfinderprogramsothatthecontactpositionsareatleast10mmapart.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,51,ACAL-020 Invalid Frame number.,The current frame number setting is invalid.,UsetheSETUP/FRAMEmenutosetupthecorrectframe.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,51,"ACAL-021 Large Frame deviation.
+part. ChangetheXYZandORNTchangevalueinthescheduleifthesenumbersareverysmall.
+3–7",Thecomputedframeoffsetexceedsthepre-setvalue.,Runthecalibrationprogramagaintomakesuretherobotmakessolidcontactswiththe
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,52,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,52,ACAL-022 Detect without mastering,AnAccuCal2teachpendantprogramisrunningwithoutperformingmasteringitfirst.,"DisplaytheAccuCal2menu,andmastertheprogramfirst."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,52,ACAL-023 No EXEC at Single Step Mode.,TherobotcannotexecuteanAccuCal2programinSingleStepMode.,TurnoffSingleStepbeforeexecutingthecellfinderprogram.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,52,ACAL-024 Master Update failed.,AfailureoccurredwhiletryingtoupdatethemasterdatainaFINDinstruction.,Re-mastertheframesearchteachpendantprogram.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,52,ACAL-025 Large frame shift.,A very large frame shift has occurred.,ChecktheUTOOLandthefixturetomakesurethattheyareproperlyinstalled.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,52,ACAL-026 No CALIB END instruction.,NoCALIBENDinstruction. AccuCal2programdoesnothaveaFINDENDinstruction.,AddCALIBENDinstructionattheendoftheframesearchteachpendantprogram.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,52,"ACAL-027 Counts do not match.
+3–8",Thenumberofmasterdataandnumberofruntimedatadoesnotmatcheachother.,Run the finder program again.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,53,MARRBERCD04121E REV N 3. ERROR CODES,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,53,ACAL-028 No logged frame data.,Nologgedframedataexistsandtheframecannotberestored.,Select a logged frame.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,53,"ACAL-029 Zero offset, No Update.",No change occurred in the offset frame.,Run Cell Finder again to compute a new offset.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,53,ACAL-030 Frame Log is disabled.,The Frame data log is disabled.,Enable the frame log first.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,53,ACAL-031 Cold start to set $USEUFRAME,$USEUFRAMEissettoFALSE.AccuCal2resetittoTRUE.,"Turnoffthecontroller,theturnitonagaintoperformaColdstart."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,53,ACAL-032 Invalid motion group.,The motion group number is invalid.,Useonlyonegroupintheprogramandmakesurethegroupisavailable.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,53,"ACAL-033 Other group is running.
+3–9",The other program has motion control.,Abort the other running program.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,54,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,54,ACAL-034 Group mismatched.,The motion group number is not right.,"Useonlyonegroupintheprogram,andmakesuregroupisavailable."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,54,ACAL-035 Press Shift Key.,The SHIFT key was not pressed.,Press the SHIFT key.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,54,"ACAL-036 Failed to create TPE program
+• Make sure enough memory is available.
+• Make sure the program is not being edited.
+• Make sure the program is not write protected.",The teach pendant program could not be created.,Check the following:
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,54,"ACAL-037 TPE Position is not recorded
+protected.",The teach pendant position has not been recorded. Make sure the program is not write,Unprotect the write protected program.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,54,"ACAL-038 TPE Program does not exist.
+3–10",Theselectedteachpendantprogramwasnotfoundanddoesnotexist.,Select an existing teach pendant program.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,55,MARRBERCD04121E REV N 3. ERROR CODES,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,55,ACAL-039 Move to recorded posn failed,Therobotcouldnotmovetotherecordedposition.,Makesurethepositionisreachableandthatanotherprogramdoesnothavemotioncontrol.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,55,ACAL-040 Invalid Detection TP program,Thedetectionteachpendantprogramisnotusable.,Load a proper detection program.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,55,ACAL-041 Override should be 100%.,The speed override is not 100%.,"Beforerunningtheprogram,increasetheoverrideto100%."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,55,ACAL-042 Large orientation change.,Thefoundorientationislargerthanthetoleranceallows.,Adjusttheobjectsothatorientationissmaller. Increasetheorientationtolerance.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,55,ACAL-043 Points & solution mismatch.,Thenumberofsearchpointsdoesnotmatchtheselectedsolutiontype.,"Selectadifferentsolutiontype,oradjustnumberofdetectstatements."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,55,"ACAL-044 Solution type error.
+3–11",An unsupported solution type error was selected.,Choose a different solution type.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,56,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,56,ACAL-045 Failed to set register.,The specified register was not set.,Make sure the specified register exists.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,56,ACAL-046 Failed to convert position.,Thepositionfailedtoconvert. Theinternalpositionwasnotset.,Makesurethepointsaretaughtinthepropersequenceandarenotnearlimits.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,56,ACAL-047 Too many points used.,Too many points are used.,Reduce the number of detect points.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,56,ACAL-048 Solution failed.,The solution failed to complete.,Makesurethecorrectnumberofpointsaretaughtinthecorrectdirectionsandorientation.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,56,"ACAL-049 Motion limit error.
+position.
+schedule.",Thisisamotionlimiterror. Thedetectmotionfailedduetoalimiterrorforthedestination,"Movetherobotawayfromthejointlimit,orreducethesearchdistanceinthedetection"
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,56,"ACAL-050 iRCal. TCP is not loaded.
+Controlledstart,andloadtheTCPCalsoftwarefromtheoptionmenu.
+3–12",TCP Cal is not loaded.,Try to run the TCP Calibration instruction without the TCP Cal software. Perform a
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,57,MARRBERCD04121E REV N 3. ERROR CODES,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,57,"ACAL-051 iRCal. Frame is not loaded.
+Controlledstart,andloadtheCellCalsoftwarefromtheoptionmenu.",Cell Cal is not loaded.,Try to run the Cell Calibration instruction without the Cell Cal software. Perform a
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,57,"ACAL-052 iRCal. Master is not loaded.
+Robot Cal software.",RobotCalisnotloaded. TherobottriedtoruntherobotCalibrationinstructionwithoutthe,"PerformaControlledstart,andloadtheRobotCalsoftwarefromtheOPTIONmenu."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,57,"ACAL-053 No calibration software.
+software.
+OPTION menu.",No calibration software. The robot tried to run a detect instruction without Calibration,"Perform a Controlled start, and load one of the Calibration software options from the"
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,57,"ACAL-054 Invalid Calibration program.
+menu.
+menu.",InvalidCalibrationprogram. Thecalibrationprogramtypedoesnotmatchthecalibration,Checktheteachpendantprogram'scalibrationstartinstructionsoitmatchesthecalibration
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,57,"ACAL-055 Too Many Parallel Searches.
+when the total number of searches is less than 7.
+3–13",Too Many Parallel Searches have occurred. More than three parallel searches occurred,"Teachmoresearches,orchangetheexcessparallelsearchestobeinadifferentdirection."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,58,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,58,"ACAL-056 Skip Update Frame Inst.
+RemovetheUPDATEFRAMEinstructionfromthenon-CellCalprogram.",TherobotexecutedanUPDATEFRAMEinstructioninanon-Cellcalibrationprogram.,UPDATEFRAMEonlyworksinCellCalibrationprogramswithUframeStartinstruction.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,58,"ACAL-057 Large Calibration Error
+schedule.",Residualmaximumcalibrationhasexceededthelimitallowedbythespecifiedschedule.,Verifysolidtoolingandgoodcontactismadeduringallsearches. Increasethelimitinthe
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,58,ACAL-058 UFRAME Change Not Allowed,TheUFRAMEwaschangedduringUTOOLcalibrationandthisisnotallowed.,UsethesameUFRAMEforallpointsduringtheinitialUTOOLcalib.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,58,ACAL-059 All Positions Not Recorded,All required positions are not recorded.,"Recordallnecessarypositions, andretrytheoperation."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,58,"ACAL-060 Excessive Accumulated offset
+Error Threshold in the tool calibration schedule.",Theaccumulatedoffsetexceedsthetolerancespecifiedintheschedule.,"RepairthetoolsothattheTCPisclosertothereferenceTCP,orincreaseAccumulated"
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,58,"ACAL-061 UFrame mismatch.
+the program's uframe.
+3–14",A UFrame mismatch has occurred. The current MNUFRAME number does not match,Changethecurrentuserframenumbertomatchtheprogram'suserframenumber.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,59,MARRBERCD04121E REV N 3. ERROR CODES,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,59,"ACAL-062 Too many moves in a program.
+motion lines in it.",Toomanymoveshavebeenattemptedinaprogram. TheCalibrationporgramhastoomany,Limitthenumberofmoveinstructionzinacalibrationprogramtolessthan256.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,59,"ACAL-063 Failed to update master data
+in motion.",The master data failed to update. The master count cannot be updated when the robot is,AborttherobotmotionandthenpresstheUPDATEsoftkeyagain.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,59,"ACAL-064 UTool Mismatch.
+program's utool.",A UTool mismatch has occurred. The current MNUTOOL number does not match the,Changethecurrenttoolnumbertomatchtheprogram'sutoolnumber.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,59,ACAL-065 TCP calibration failed,The TCP calibration failed to complete.,Review the previouserrorto identify the cause.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,59,ACAL-066 Frame calibration failed,Cell calibration failed to complete.,Review the previouserrorto identify the cause.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,59,"ACAL-067 Circle fit error %s
+3–15",The circle fit error exceeds the threshold.,"Checkforalossfixtureortool,orchangethefiterrortoleranceinthedetectionschedule."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,60,ERROR CODES MARRBERCD04121E REV N,Unknown,Unknown
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,60,ACAL-068 Radius err %s,Circle radius error exceeds threshold.,"Checkforalostfixtureortool,orchangetheradiuserrortoleranceinthedetectionschedule."
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,60,ACAL-069 Auto Update is ON.,AutoUpdateisonthereforetheframehasbeenupdatedautomatically.,An update is not required.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,60,"ACAL-070 No update on record points.
+instructionsthanexpected. Thepositionscannotautomaticallyupdateinthescreen.",Noupdateonrecordpoints. TheteachpendantprogramhasadifferentnumberofDETECT,Manuallyrecordpositionstocreatethecalibrationprogram.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,60,ACAL-071 Invalid joint number.,TheaxisnumberspecifiedintheDETECTJointinstructionisinvalid.,Change the axis number to a valid one.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,60,ACAL-072 Invalid joint sensor type.,TheDetectJointinstructioncannotuseTOSWRISTsensortypeforcontactdetection.,ChangesensortypetoeitherIOorTOSallaxesinthedetectionschedule.
+doc-R-30iB.pdf,SYSTEM R-30 i B and R-30 i B Mate Controller,60,"ACAL-073 Skip Detect Joint
+instructiontoCALIBSTARTordeletetheinstructionfromtheprogram.
+3–16",TheDetectJointinstructionisnotvalidforTCPorCELLcalibration.,TheDetectJointinstructionisforROBOTcalibrationonly. Changethecalibrationstart

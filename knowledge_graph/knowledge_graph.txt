@@ -1,0 +1,47 @@
+[R-30iB Mate Controller]
+    ├─ présente ──► [ACAL-000 Fail to run DETECT Motn]
+    │                 ├─ causée par ──► [AccuCal2 Motion failed to run.]
+    │                 │                  ├─ se résout par ──► [Clear all the errors before executing]
+    │                 │                  │                      └─ documentée dans ──► [Doc-01.pdf]
+    │                 │                  │                      └─ documentée dans ──► [Doc-03.pdf]
+    │                 │                  └─ documentée dans ──► [Doc-01.pdf]
+    │                 │                  └─ documentée dans ──► [Doc-03.pdf]
+    │                 │
+    │                 ├─ causée par ──► [Cause n°2]
+    │                 │                  ├─ se résout par ──► [Remedy n°2]
+    │                 │                  │                      └─ documentée dans ──► [Doc-02.pdf]
+    │                 │                  │                      └─ documentée dans ──► [Doc-03.pdf]
+    │                 │                  └─ documentée dans ──► [Doc-02.pdf]
+    │                 │                  └─ documentée dans ──► [Doc-03.pdf]
+    │                 │
+    │                 └─ causée par ──► [Cause n°3]
+    │                                    ├─ se résout par ──► [Remedy n°3]
+    │                                    │                      └─ documentée dans ──► [Doc-04.pdf]
+    │                                    └─ documentée dans ──► [Doc-04.pdf]
+    │
+    └─ présente ──► [ACAL-071 Invalid joint number.]
+                      ├─ causée par ──► [invalid DETECT Joint instruction]
+                      │                  └─ se résout par ──► [Change the axis number to a valid one]
+                      │                                          └─ documentée dans ──► [Doc-05.pdf]
+                      │
+                      └─ causée par ──► [Cause n°2]
+                                         └─ se résout par ──► [Remedy n°2]
+                                                                 └─ documentée dans ──► [Doc-06.pdf]
+
+[Doc-01.pdf par ex: doc-R-30iB.pdf]
+    └─ concerne ──► [R-30iB Mate Controller]
+
+[Doc-02.pdf]
+    └─ concerne ──► [R-30iB Mate Controller]
+
+[Doc-03.pdf]
+    └─ concerne ──► [R-30iB Mate Controller]
+
+[Doc-04.pdf]
+    └─ concerne ──► [R-30iB Mate Controller]
+
+[Doc-05.pdf]
+    └─ concerne ──► [R-30iB Mate Controller]
+
+[Doc-06.pdf]
+    └─ concerne ──► [R-30iB Mate Controller]
