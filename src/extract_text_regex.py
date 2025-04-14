@@ -88,7 +88,7 @@ def extract_triplets_from_text(text):
     return triplets
 
 
-def convert_pdf_to_json_with_progress(pdf_path):
+def convert_pdf_to_json_with_progress(pdf_path, num_pages=None):
     """
     Convert a PDF file to a JSON object with its text content by page,
     and display a progress bar during processing.
@@ -104,7 +104,19 @@ def convert_pdf_to_json_with_progress(pdf_path):
     try:
         with pdfplumber.open(pdf_path) as pdf:
             total_pages = len(pdf.pages)
-            for page in tqdm(pdf.pages, total=total_pages, desc="Processing PDF pages"):
+            # Déterminer les pages à traiter
+            if num_pages is None:
+                pages_to_process = range(total_pages)  # toutes les pages
+            elif isinstance(num_pages, tuple) and len(num_pages) == 2:
+                start, end = num_pages
+                if not (1 <= start <= end <= total_pages):
+                    raise ValueError(f"Page range must be between 1 and {total_pages}")
+                pages_to_process = range(start - 1, end)  # index 0-based
+            else:
+                raise ValueError("num_pages must be None or a tuple like (start, end)")
+            
+            for i in tqdm(pages_to_process, total=total_pages, desc="Processing PDF pages"):
+                page = pdf.pages[i]
                 json_object["Text"].append({
                     "PageNumber": page.page_number,
                     "Raw Content": page.extract_text(),
