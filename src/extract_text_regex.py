@@ -3,7 +3,7 @@ import os
 import json
 import pdfplumber
 import pandas as pd
-from tqdm import tqdm
+from tqdm.auto import tqdm
 
 SYNONYMS = {
     "cause": ["Cause", "Explanation", "Explication"],
@@ -90,11 +90,13 @@ def extract_triplets_from_text(text):
 
 def convert_pdf_to_json_with_progress(pdf_path, num_pages=None):
     """
-    Convert a PDF file to a JSON object with its text content by page,
+    Convert a PDF file to a JSON object with its text content for specified pages,
     and display a progress bar during processing.
 
     Args:
         pdf_path (str): Path to the PDF file.
+        num_pages (tuple or None): A tuple (start_page, end_page) indicating the page range (inclusive),
+                                   or None to process all pages.
 
     Returns:
         dict: A JSON-like dictionary with the file name and text content.
@@ -104,24 +106,26 @@ def convert_pdf_to_json_with_progress(pdf_path, num_pages=None):
     try:
         with pdfplumber.open(pdf_path) as pdf:
             total_pages = len(pdf.pages)
+
             # Déterminer les pages à traiter
             if num_pages is None:
-                pages_to_process = range(total_pages)  # toutes les pages
+                pages_to_process = range(total_pages)
             elif isinstance(num_pages, tuple) and len(num_pages) == 2:
                 start, end = num_pages
                 if not (1 <= start <= end <= total_pages):
                     raise ValueError(f"Page range must be between 1 and {total_pages}")
-                pages_to_process = range(start - 1, end)  # index 0-based
+                pages_to_process = range(start - 1, end)  # 0-based range
             else:
                 raise ValueError("num_pages must be None or a tuple like (start, end)")
-            
-            for i in tqdm(pages_to_process, total=total_pages, desc="Processing PDF pages"):
+
+            for i in tqdm(pages_to_process, total=len(pages_to_process), desc="Processing PDF pages"):
                 page = pdf.pages[i]
                 json_object["Text"].append({
-                    "PageNumber": page.page_number,
+                    "PageNumber": i + 1,  # ou page.page_number si tu veux la valeur du PDF
                     "Raw Content": page.extract_text(),
                     "Clean Content": ""
                 })
+
     except FileNotFoundError:
         raise Exception(f"File not found: {pdf_path}")
     except Exception as e:
@@ -141,8 +145,8 @@ class ExtracteurSCR:
         self.liste_triplets_scr = []
         self.parsed_doc = None
 
-    def parser_doc(self):
-      self.parsed_doc = convert_pdf_to_json_with_progress(self.path)
+    def parser_doc(self, num_pages=None):
+      self.parsed_doc = convert_pdf_to_json_with_progress(self.path, num_pages=num_pages)
 
     def extract_triplets_from_text(self):
       liste_triplets_scr = []
@@ -222,6 +226,7 @@ def process_folder_v2(folder_path, output_dir="export_triplets", max_files=None,
     
 extracteur = ExtracteurSCR(path_to_doc_fournisseur)
 extracteur.parser_doc()
+extracteur.parser_doc(num_pages=(40, 60)) # Remplacer par le nombre de pages que vous souhaitez traiter
 triplet = extracteur.extract_triplets_from_text()
 folder_path = "/content/drive/MyDrive/pdf_file/data_pdf/simple" # Remplacer par le chemin réel de votre dossier
 
